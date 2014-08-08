@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.pwd}/upstart-hello.conf")}' > '/etc/init/sinatra_hello.conf'"
   config.vm.provision "shell", inline: $script
   config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.pwd}/nginx-hello.conf")}' > '/etc/nginx/sites-enabled/sinatra_hello'"
-  config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.pwd}/NginxLog.py)}' > '/usr/lib/python2.7/dist-packages/logster/parsers/NginxLog.py'"
+  config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.pwd}/NginxLog.py")}' > '/usr/lib/python2.7/dist-packages/logster/parsers/NginxLog.py'"
   config.vm.provision "shell", inline: "/etc/init.d/nginx restart"
   
   config.vm.network "forwarded_port", guest: 80, host: 8080
