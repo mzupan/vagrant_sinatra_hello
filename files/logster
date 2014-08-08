@@ -1,0 +1,1 @@
+*/5 * * * * root /bin/date \+\%x-\%X >> /home/vagrant/requests.log && /usr/bin/logster --output=stdout NginxLog /srv/sinatra_hello/requests.log >> /home/vagrant/requests.log

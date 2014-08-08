@@ -8,7 +8,6 @@ chown -R vagrant: sinatra_hello
 start sinatra_hello
 apt-get -y install nginx logster
 rm -rf /etc/nginx/sites-enabled/default
-echo '* * * * * root /bin/date \+\%x-\%X >> /home/vagrant/requests.log && /usr/bin/logster --output=stdout NginxLog /srv/sinatra_hello/requests.log >> /home/vagrant/requests.log' > /etc/cron.d/logster
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -52,6 +51,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: $script
   config.vm.provision :shell, :inline => "cp /home/vagrant/files/nginx-hello.conf /etc/nginx/sites-enabled/sinatra_hello"
   config.vm.provision :shell, :inline => "cp /home/vagrant/files/NginxLog.py /usr/lib/python2.7/dist-packages/logster/parsers/NginxLog.py"
+  config.vm.provision :shell, :inline => "cp /home/vagrant/files/logster /etc/cron.d/logster"
   config.vm.provision "shell", inline: "/etc/init.d/nginx restart"
   
   config.vm.network "forwarded_port", guest: 80, host: 8080
