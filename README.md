@@ -9,7 +9,7 @@ Install
 To install
 
 ```
-git clone git@github.com:mzupan/vagrant_sinatra_hello.git
+git clone https://github.com/mzupan/vagrant_sinatra_hello.git
 cd vagrant_sinatra_hello
 vargrant up --provision
 ```
