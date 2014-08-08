@@ -33,3 +33,6 @@ To view logs for type of requests per 5 minutes run the following
 vagrant ssh
 tail -f ~/requests.log
 ```
+
+The first run of the request counts will give no data since logster needs a mark in the log to work with to give
+valid results. So wait till the next run if you ssh in right after bootup of the VM
