@@ -26,3 +26,10 @@ You should get something like
 Mikes-MacBook-Pro:pagerduty mike$ curl http://localhost:8080/
 Hello! The current time is 18:59
 ```
+
+To view logs for type of requests per 5 minutes run the following
+
+```
+vagrant ssh
+tail -f ~/requests.log
+```

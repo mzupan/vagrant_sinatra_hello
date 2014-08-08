@@ -6,7 +6,7 @@ git clone https://github.com/arupchak/sinatra_hello.git
 mkdir -p sinatra_hello/log
 chown -R vagrant: sinatra_hello
 start sinatra_hello
-apt-get -y install nginx
+apt-get -y install nginx logster
 rm -rf /etc/nginx/sites-enabled/default
 SCRIPT
 
